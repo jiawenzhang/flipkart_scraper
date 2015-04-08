@@ -13,7 +13,7 @@ module.exports = {
 		var packet = req.params.all();
 		sails.log.info(packet);
 		if(packet.url){
-			var python = spawn("python", ['/home/mandeep/flipkart_scraper.py', packet.url]);
+			var python = spawn("python", ['../../flipkart_scraper.py', packet.url]);
 			output = ""
 			python.stdout.on('data', function (chunk){
 				sails.log.info(output) 
