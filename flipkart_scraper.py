@@ -94,6 +94,7 @@ def scrape(url):
 		}
 
 		print json.dumps(scraped_info)
+		quit()
 
 	except:
 		pass
