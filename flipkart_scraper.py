@@ -99,6 +99,7 @@ def scrape(url):
 		pass
 		# print "error fetching page", sys.exc_info()[0]
 
+
 if __name__ == "__main__":
 	if len(sys.argv) > 1:
 		url = sys.argv[1]
