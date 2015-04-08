@@ -20,7 +20,12 @@ module.exports = {
 				output += chunk.toString()
 			});
 			python.on("close", function (code){
-				return res.json(200, JSON.parse(output));
+				if(code != 0){
+					return res.json(500, {"error": "error parsing url"});
+				}
+				else{
+					return res.json(200, JSON.parse(output));
+				}
 			});
 		} else {
 			return res.json(500, {"error": "invalid request"});
