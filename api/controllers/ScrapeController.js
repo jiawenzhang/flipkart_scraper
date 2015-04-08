@@ -19,6 +19,9 @@ module.exports = {
 				sails.log.info(output) 
 				output += chunk.toString()
 			});
+			python.stderr.on("data", function (data){
+				sails.log.error(data);
+			})
 			python.on("close", function (code){
 				if(code != 0){
 					return res.json(500, {"error": "error parsing url"});
