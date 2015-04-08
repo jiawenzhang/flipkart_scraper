@@ -20,7 +20,7 @@ module.exports = {
 				output += chunk.toString()
 			});
 			python.stderr.on("data", function (data){
-				sails.log.error(data);
+				sails.log.error(data.toString());
 			})
 			python.on("close", function (code){
 				if(code != 0){
